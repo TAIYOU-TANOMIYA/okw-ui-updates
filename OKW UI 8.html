@@ -2146,7 +2146,8 @@
       return structuredClone(defaultState);
     }
 
-    let state = (!needsInitialAccountSignup && activeAccountId)
+    let state = null;
+    state = (!needsInitialAccountSignup && activeAccountId)
       ? loadStateForAccount(activeAccountId)
       : (legacyDataDetected ? mergeRawStateWithDefaults(legacyDataDetected) : structuredClone(defaultState));
 
